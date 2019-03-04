@@ -37,3 +37,11 @@ body::-webkit-scrollbar { /* WebKit */
 	height: 6.2em;
 }
 
+.shrink {
+	transition-delay: 1s;
+	background: rgb(255,255,153) !important;
+	transition: background 1s;
+	height: 3em !important;
+	transition: height 1s;
+}
+
