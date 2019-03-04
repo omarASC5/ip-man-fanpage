@@ -13,20 +13,21 @@ body::-webkit-scrollbar { /* WebKit */
 }
 
 #video-background {
-	min-width: 100%;
-	min-height: 100%;
-	position: relative;
-	z-index: -1;
+	position: absolute;
+  	z-index: -1;
+ 	min-width:100%;
+  	min-height:100%;
 }
 
 
 #video-background-container {
 	z-index: 1;
-	background: #ED213A;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, rgba(147, 41, 30, 
-	var(--video-background-overlay-opacity, 0.3)), 
-	rgba(237, 33, 58, var(--video-background-overlay-opacity, 0.3)));  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, 
-	rgba(147, 41, 30, var(--video-background-overlay-opacity, 0.3)), 
-	rgba(237, 33, 58, var(--video-background-overlay-opacity, 0.3))); 
+	position: relative;
+}
+
+.jumbotron container {
+	z-index: 2;
+	position: relative;
+	height: 100vh;
+
 }
