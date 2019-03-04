@@ -24,7 +24,18 @@ fetch("http://www.omdbapi.com/?s=ip+man&plot=full&apikey=thewdb").then((response
 		const masterMovieContainer = document.getElementById('master-movie-container');
 		const movieContainer = document.createElement('div');
 		movieContainer.classList.add('movie-container');
+		movieContainer.classList.add('text-center');
+		movieContainer.classList.add('col-lg-3');
+		movieContainer.classList.add('col-md-4');
+		movieContainer.classList.add('col-sm-6');
 		masterMovieContainer.appendChild(movieContainer);
+
+		// Adds the image to the movie div
+		const posterImage = document.createElement('img');
+		posterImage.classList.add('poster');
+		posterImage.classList.add('img-fluid');
+		movieContainer.appendChild(posterImage);
+		posterImage.src = movie.Poster;
 
 		// Adds the title to the movie div 
 		const titleParagraph = document.createElement('p');
@@ -37,12 +48,6 @@ fetch("http://www.omdbapi.com/?s=ip+man&plot=full&apikey=thewdb").then((response
 		yearParagraph.classList.add('year');
 		movieContainer.appendChild(yearParagraph);
 		yearParagraph.innerHTML = movie.Year;
-
-		// Adds the image to the movie div
-		const posterImage = document.createElement('img');
-		posterImage.classList.add('poster');
-		movieContainer.appendChild(posterImage);
-		posterImage.src = movie.Poster;
 	})
 });
 
