@@ -25,9 +25,15 @@ body::-webkit-scrollbar { /* WebKit */
 	position: relative;
 }
 
-.jumbotron container {
+.jumbotron-fluid .container {
 	z-index: 2;
 	position: relative;
-	height: 100vh;
 
 }
+
+.jumbotron-fluid nav {
+	position: fixed;
+	width: 100%;
+	height: 6.2em;
+}
+
