@@ -63,8 +63,22 @@ body::-webkit-scrollbar { /* WebKit */
 
 #books-container {
 	background: rgb(255, 222, 100);
+	line-height: 1.5;
 }
 
+.book {
+	border: 1px red solid;
+}
+
+
+
+.book-title {
+	font-style: italic;
+}
+
+h6 {
+	font-size: 1.5em;
+}
 /* #master-movie-container {
 	background: rgb(98, 162, 224);
 } */

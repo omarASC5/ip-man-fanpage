@@ -91,8 +91,8 @@
 			<h6>In Movies...</h6>
 			<div id="master-movie-container" class="row"></div>
 		</div>
-		<div class="container" id="books-container">
-			<h6>In Books...</h6>
+		<div class="container my-5" id="books-container">
+			<h6 class="py-2">In Books...</h6>
 			<div id="master-books-container"></div>
 		</div>
 	</div>
@@ -103,9 +103,24 @@
 				console.log(item.volumeInfo)
 				// in production code, item.text should have the HTML entities escaped.
 				const bookContainer = document.createElement('div');
+				bookContainer.classList.add('col-lg-3');
+				bookContainer.classList.add('col-md-4');
+				bookContainer.classList.add('col-sm-6');
+				bookContainer.classList.add('text-center');
+				bookContainer.classList.add('p-5');
 				bookContainer.classList.add('book');
+				document.getElementById("master-books-container").classList.add('row');
+				// document.getElementById("master-books-container").classList.add('mt-5');
 				document.getElementById("master-books-container").appendChild(bookContainer);
 
+
+				// Image
+				const coverImage = document.createElement('img');
+				coverImage.classList.add('book-image');
+				document.getElementsByClassName('book')[i].appendChild(coverImage);
+				document.getElementsByClassName("book-image")[i].src = item.volumeInfo.imageLinks.thumbnail;
+				document.getElementsByClassName("book-image")[i].alt = "picture of book cover";
+				
 				// Title Paragraph Section
 				const titleParagraph = document.createElement('p');
 				titleParagraph.classList.add('book-title');
@@ -116,7 +131,9 @@
 				const subtitleParagraph = document.createElement('p');
 				subtitleParagraph.classList.add('book-subtitle');
 				document.getElementsByClassName('book')[i].appendChild(subtitleParagraph);
-				document.getElementsByClassName("book-subtitle")[i].innerHTML = item.volumeInfo.subtitle;
+				if (item.volumeInfo.subtitle != undefined) {
+					document.getElementsByClassName("book-subtitle")[i].innerHTML = item.volumeInfo.subtitle;
+				}
 			
 				// Authors
 				const authorParagraph = document.createElement('p');
@@ -134,26 +151,25 @@
 				const publishedDateParagraph = document.createElement('p');
 				publishedDateParagraph.classList.add('book-publishedDate');
 				document.getElementsByClassName('book')[i].appendChild(publishedDateParagraph);
-				document.getElementsByClassName("book-author")[i].innerHTML = item.volumeInfo.publishedDate;
+				document.getElementsByClassName("book-author")[i].innerHTML = 'Published: ' + item.volumeInfo.publishedDate;
 
 				// pageCount
 				const pageCountParagraph = document.createElement('p');
 				pageCountParagraph.classList.add('book-pageCount');
 				document.getElementsByClassName('book')[i].appendChild(pageCountParagraph);
-				document.getElementsByClassName("book-pageCount")[i].innerHTML = item.volumeInfo.pageCount;
+				document.getElementsByClassName("book-pageCount")[i].innerHTML = 'Page Count: ' + item.volumeInfo.pageCount;
 				
 				// infoLink
 				const infoLinkParagraph = document.createElement('a');
 				infoLinkParagraph.classList.add('book-infoLink');
 				document.getElementsByClassName('book')[i].appendChild(infoLinkParagraph);
+				document.getElementsByClassName("book-infoLink")[i].classList.add('btn');
+				document.getElementsByClassName("book-infoLink")[i].classList.add('btn-outline-primary');
 				document.getElementsByClassName("book-infoLink")[i].href = item.volumeInfo.infoLink;
-				document.getElementsByClassName("book-infoLink")[i].innerHTML = item.volumeInfo.infoLink;
+				document.getElementsByClassName("book-infoLink")[i].target = "_blank";
+				document.getElementsByClassName("book-infoLink")[i].innerHTML = 'Read More';
 				
-				// Image
-				const coverImage = document.createElement('img');
-				coverImage.classList.add('book-image');
-				document.getElementsByClassName('book')[i].appendChild(coverImage);
-				document.getElementsByClassName("book-image")[i].src = item.volumeInfo.imageLinks.thumbnail;
+				
 				
 
 			}
