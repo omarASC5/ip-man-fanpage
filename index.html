@@ -149,6 +149,12 @@
 				document.getElementsByClassName("book-infoLink")[i].href = item.volumeInfo.infoLink;
 				document.getElementsByClassName("book-infoLink")[i].innerHTML = item.volumeInfo.infoLink;
 				
+				// Image
+				const coverImage = document.createElement('img');
+				coverImage.classList.add('book-image');
+				document.getElementsByClassName('book')[i].appendChild(coverImage);
+				document.getElementsByClassName("book-image")[i].src = item.volumeInfo.imageLinks.thumbnail;
+				
 
 			}
     }

@@ -65,6 +65,10 @@ body::-webkit-scrollbar { /* WebKit */
 	background: rgb(255, 222, 100);
 }
 
+/* #master-movie-container {
+	background: rgb(98, 162, 224);
+} */
+
 .movie-container:hover {
 	transition: 0.5s ease-in;
 	transform: scale(1.1);
