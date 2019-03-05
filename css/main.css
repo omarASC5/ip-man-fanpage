@@ -61,6 +61,10 @@ body::-webkit-scrollbar { /* WebKit */
 	background: rgb(255, 192, 100);
 }
 
+#books-container {
+	background: rgb(255, 222, 100);
+}
+
 .movie-container:hover {
 	transition: 0.5s ease-in;
 	transform: scale(1.1);

@@ -91,8 +91,69 @@
 			<h6>In Movies...</h6>
 			<div id="master-movie-container" class="row"></div>
 		</div>
+		<div class="container" id="books-container">
+			<h6>In Books...</h6>
+			<div id="master-books-container"></div>
+		</div>
 	</div>
-	
+    <script>
+      function handleResponse(response) {
+      for (var i = 0; i < response.items.length; i++) {
+				var item = response.items[i];
+				console.log(item.volumeInfo)
+				// in production code, item.text should have the HTML entities escaped.
+				const bookContainer = document.createElement('div');
+				bookContainer.classList.add('book');
+				document.getElementById("master-books-container").appendChild(bookContainer);
+
+				// Title Paragraph Section
+				const titleParagraph = document.createElement('p');
+				titleParagraph.classList.add('book-title');
+				document.getElementsByClassName('book')[i].appendChild(titleParagraph);
+				document.getElementsByClassName("book-title")[i].innerHTML = item.volumeInfo.title;
+				
+				// Subtitle Paragraph Section
+				const subtitleParagraph = document.createElement('p');
+				subtitleParagraph.classList.add('book-subtitle');
+				document.getElementsByClassName('book')[i].appendChild(subtitleParagraph);
+				document.getElementsByClassName("book-subtitle")[i].innerHTML = item.volumeInfo.subtitle;
+			
+				// Authors
+				const authorParagraph = document.createElement('p');
+				authorParagraph.classList.add('book-author');
+				document.getElementsByClassName('book')[i].appendChild(authorParagraph);
+				document.getElementsByClassName("book-author")[i].innerHTML = item.volumeInfo.authors[i];
+
+				// description
+				const descriptionParagraph = document.createElement('p');
+				descriptionParagraph.classList.add('book-description');
+				document.getElementsByClassName('book')[i].appendChild(descriptionParagraph);
+				document.getElementsByClassName("book-author")[i].innerHTML = item.volumeInfo.description;
+
+				// publishedDate
+				const publishedDateParagraph = document.createElement('p');
+				publishedDateParagraph.classList.add('book-publishedDate');
+				document.getElementsByClassName('book')[i].appendChild(publishedDateParagraph);
+				document.getElementsByClassName("book-author")[i].innerHTML = item.volumeInfo.publishedDate;
+
+				// pageCount
+				const pageCountParagraph = document.createElement('p');
+				pageCountParagraph.classList.add('book-pageCount');
+				document.getElementsByClassName('book')[i].appendChild(pageCountParagraph);
+				document.getElementsByClassName("book-pageCount")[i].innerHTML = item.volumeInfo.pageCount;
+				
+				// infoLink
+				const infoLinkParagraph = document.createElement('a');
+				infoLinkParagraph.classList.add('book-infoLink');
+				document.getElementsByClassName('book')[i].appendChild(infoLinkParagraph);
+				document.getElementsByClassName("book-infoLink")[i].href = item.volumeInfo.infoLink;
+				document.getElementsByClassName("book-infoLink")[i].innerHTML = item.volumeInfo.infoLink;
+				
+
+			}
+    }
+    </script>
+    <script src="https://www.googleapis.com/books/v1/volumes?q=ip+man&callback=handleResponse"></script>
 	<!-- jQuery first, then Popper.js, then Bootstrap JS, Bootstap dependencies -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
