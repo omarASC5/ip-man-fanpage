@@ -1,7 +1,7 @@
 let prevScrollpos = window.pageYOffset;
 window.onscroll = () => {
   let currentScrollPos = window.pageYOffset;
-   if (prevScrollpos > currentScrollPos) {
+   if (currentScrollPos < $(window).height()) {
 
 	   document.getElementById("navbar").classList.remove('shrink');
 	   document.getElementById("navbar").classList.add('navbar-dark');
@@ -24,6 +24,7 @@ fetch("http://www.omdbapi.com/?s=ip+man&plot=full&apikey=thewdb").then((response
 		const masterMovieContainer = document.getElementById('master-movie-container');
 		const movieContainer = document.createElement('div');
 		movieContainer.classList.add('movie-container');
+		movieContainer.classList.add('pb-3');
 		movieContainer.classList.add('text-center');
 		movieContainer.classList.add('col-lg-3');
 		movieContainer.classList.add('col-md-4');
