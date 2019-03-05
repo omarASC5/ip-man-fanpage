@@ -57,6 +57,17 @@ body::-webkit-scrollbar { /* WebKit */
 	width: 200px;
 }
 
+#ip-man-in-media {
+	background: rgb(255, 192, 100);
+}
+
+.movie-container:hover {
+	transition: 0.5s ease-in;
+	transform: scale(1.1);
+
+}
+
+
 #more-about-him {
 	background: rgb(123, 108, 228);
 }
