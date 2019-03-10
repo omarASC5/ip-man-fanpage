@@ -11,64 +11,79 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
 	<link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400i,600,700" rel="stylesheet">
-	<script src="./js/main.js"></script>
+	<link rel="icon" href="./img/ip-man-logo.png">
+	<script src="./js/main.js" defer></script>
 </head>
 <body>
-	<nav></nav>
-	<!-- <header> -->
-		<div class="jumbotron-fluid" id="video-background-container">
+		<!-- Text Source: https://www.biography.com/people/yip-man-21370115  -->
+		<header class="jumbotron-fluid" id="video-background-container">
 				<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
-						<a class="navbar-brand mx-auto" href="#">Navbar</a>
+					<a class="navbar-brand mx-auto" href="#">
+						<img src="./img/ip-man-logo.png" class="img-fluid" alt="ip man logo">
+					</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 						  <span class="navbar-toggler-icon"></span>
 						</button>
 						<div class="collapse navbar-collapse" id="navbarNav">
 						  <ul class="navbar-nav mx-auto">
+							  <!-- Each li, is a link on the navbar -->
 							<li class="nav-item active">
 							  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 							</li>
 							<li class="nav-item">
-							  <a class="nav-link" href="#">Features</a>
+								<a class="nav-link" href="#as-a-kid-container">Youth</a>
 							</li>
 							<li class="nav-item">
-							  <a class="nav-link" href="#">Pricing</a>
+								<a class="nav-link" href="#career-container">Career</a>
 							</li>
 							<li class="nav-item">
-							  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+								<a class="nav-link" href="#image-gallery-container">Image Gallery</a>
 							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#ip-man-in-media">In Movies</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#books-container">In Books</a>
+							</li>			
 						  </ul>
 						</div>
 					  </nav>
-			<!-- <div class="embed-responsive embed-responsive-16by9"> -->
+
+				<!-- This image is displayed only to mobile users, in
+				place of the video background -->
+				<img src="./img/img-on-mobile.png" class="img-fluid img-on-mobile" alt="">
+
 				<!-- Original Source of video clip: https://www.youtube.com/watch?v=NnBnEDcvYmM -->
 				<video class="embed-responsive embed-responsive-16by9" id="video-background" autoplay loop muted>
-					<source src="./videos/ezgif.com-crop.mp4" type="video/mp4">
+					<source src="./videos/Ip Man Video Background Clip.mp4" type="video/mp4">
 				</video>
-			<!-- </div> -->
-			<div class="container d-flex flex-wrap justify-content-center align-items-center">
+
+			<!-- Text overlayed over the video background -->
+			<div class="container d-flex flex-wrap justify-content-center align-items-center" id="video-overlay">
 					<h1 class="display-1">The Legend of Yip Man.</h1>
 					<!-- Image Source: https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjvlsTnr-fgAhWlVt8KHU1XAn8QjRx6BAgBEAU&url=https%3A%2F%2Fwip.chat%2Fproducts%2F1086&psig=AOvVaw1MuKux4UWJlEyR_11XcKh3&ust=1551750448928712 -->
 					<img src="./img/ip-man-logo.png" class="img-fluid" alt="ip man logo">
+					<!-- Yip Man's Chinese Name -->
 					<h2 class="display-2">葉問</h2>
 				</div>
-		</div>
+			</header>
 
+	 <!-- Who was Ip Man? Section of the website -->
 	<div class="container text-center mt-5">
-		<h3 class="h2">Who was Yip Man?</h3>
+		<h3 class="h1">Who was Yip Man?</h3>
 		<p>Yip Man, or Ip Man, is a martial arts master best known 
 			for teaching the Wing Chun form. Kung Fu master and icon 
 			Bruce Lee was one of his students.
 		</p>
-		<!-- <img src="./img/snake-facing-right.jpg" class="img-fluid side-dragons" alt="water snake image"> -->
-		<!-- Source: https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj2xtritOfgAhWDTN8KHczIC8QQjRx6BAgBEAU&url=http%3A%2F%2Fkungfu.chinesecio.com%2Fen%2Farticle%2F2009-08%2F29%2Fcontent_23061.htm&psig=AOvVaw1_e70XWmMvpeJML8G0Nc4e&ust=1551751964786421 -->
 		<img src="./img/yip-man-headshot.jpeg" id="yip-man-headshot" class="img-fluid" alt="picture of yip man's face">
-		<!-- <img src="./img/snake-facing-left.jpg" class="img-fluid side-dragons" alt="water snake image"> -->
 		<figcaption>Yip Man as a young adult</figcaption>
 	</div>
 
+	<!-- Some more about him (Yip Man) - portion of the website -->
 	<div class="container-fluid" id="more-about-him">
 		<div class="container text-center mt-5 p-4">
 			<h4 class="lead h3">Some more about him</h4>
+			<!-- Paragraph with background on Yip Man -->
 			<p>Yip Man, also known as Ip Man, was born on October 1, 1893, 
 				in Foshan, China. He studied Wing Chun and went on the become 
 				one of the most respected martial arts masters of his time. 
@@ -78,105 +93,215 @@
 			</p>
 		</div>
 	</div>
-	<div class="container-fluid p-4" id="ip-man-in-media">
+	
+	<!-- As a kid... website section -->
+	<div class="container" id="as-a-kid-container">
+		<h5 class="text-center pt-4 pb-2">As a kid...</h5>
+		<!-- Paragraph on Yip man's birth and family situation -->
+		<p>Yip Man, also known as Ip Man, was born Ip Kai Man (or Yip Kai Man) 
+			on October 1, 1893, in Foshan, China. He was the third of four 
+			children and was raised by his wealthy parents, Ip Oi Dor and Ng Shui.
+		</p>
+		<div class="row d-flex mt-5 pt-5">
+			<!-- Paragraph on Yip Man studying Wing Chun style martial arts -->
+				<p class="col-md-6 align-self-center">Political upheaval served as the backdrop for Man's younger years, but he 
+					received a traditional education until, at age 12, he was able to begin 
+					studying Wing Chun--a system of martial arts developed in southern China 
+					more than 300 years ago--under the tutelage of Chan Wah Shun, who charged 
+					him an exorbitant amount of money for the service, initially believing 
+					he would discourage the boy. But Man would learn much from his teacher 
+					in the three short years before Wah Shun's death.
+				</p>
+				<div class="text-center col-md-6">
+					<!-- Original Source: http://www.dragonwingchun.com/Chan-Wah-Shun-360.jpg -->
+					<img class=" img-fluid img-thumbnail" src="./img/Chan-Wah-Shun-360.jpg" id="wah-shun-headshot" alt="Picture of Chan Wah Chun's face">
+					<figcaption>Yip Man's teacher - Chan Wah Shun</figcaption>
+				</div>
+		</div>
+	</div>
+
+	<div class="container-fluid" id="background-career-container">
+		<div class="container pt-5 mt-3" id="career-container">
+				<div class="text-center pb-4">
+						<h6 class="py-4">Yip Man's Career</h6>
+
+					<!-- Paragraph on hardship in his as a young adult -->
+					<p>
+						At the age of 15, Man moved to Hong Kong, where he later attended 
+						St. Stephen's College. While in Hong Kong he also continued his 
+						martial arts training. Man eventually returned to Foshan at the 
+						age of 24 and was employed as a police officer. By this point, 
+						his Wing Chun skills were such that he was able to begin giving 
+						private lessons.
+					</p>
+
+					<!-- Paragraph on the opening on Yip man's Wing Chun school -->
+					<p>
+						In 1949, when the Chinese Communist Party came to power, Man fled 
+						to Hong Kong, where he opened a Wing Chun school, charging for 
+						his services and becoming the first martial arts master to train 
+						students publicly. One of Man's most notable students was Bruce 
+						Lee, who studied under the master in 1953. At the age of 13, Lee 
+						was an excellent and intense student and became proficient in the 
+						Wing Chun art. Lee would return to visit Yip Man in later years, 
+						the two having become friends.
+					</p>
+				</div>
+			</div>
+	</div>
+
+	<!-- Using the Bootstrap/CSS Grid the 9 images of Yip Man were arranged into a
+	gallery of pattern on large devices: X X X
+										 X X X
+										 X X X
+	Removing an item from each row, on smaller devices, until each row has 1 image -->
+	<div class="container pt-5 mt-5" id="image-gallery-container">
+		<h6 class="text-center">Image Gallery</h6>
+		<div class="row py-4">
+			<div class="col-md-4 text-center">
+				<img src="./img/image-gallery/wood-dummy.jpg" alt="wood dummy" class="img-fluid">
+				<figcaption>Yip Man's Wood Dummy</figcaption>
+			</div>
+			<div class="col-md-4 text-center">
+				<img src="./img/image-gallery/ip-man-and-bruce-lee.jpg" alt="ip man and bruce lee" class="img-fluid">
+				<figcaption>Yip Man and his most famous student, Bruce Lee</figcaption>
+			</div>
+			<div class="col-md-4 text-center">
+				<img src="./img/image-gallery/ip-man-verses-wood-dummy.jpg" alt="ip man verses wood dummy" class="img-fluid">
+				<figcaption>Yip Man training on his wood dummy</figcaption>
+			</div>
+		</div>
+		<div class="row py-4">
+			<div class="col-md-4 text-center">
+				<img src="./img/image-gallery/ip-man-and-his-family.jpg" alt="ip man and his family" class="img-fluid">
+				<figcaption>Yip man and his family</figcaption>
+			</div>
+			<div class="col-md-4 text-center">
+				<img src="./img/image-gallery/ip-man-in-ip-man-movie.jpg" alt="ip man as portrayed in the Ip Man movie" class="img-fluid">
+				<figcaption>Yip man as portrayed in the <em>Ip Man</em> movie</figcaption>
+			</div>
+			<div class="col-md-4 text-center">
+				<img src="./img/image-gallery/ip-man-and-bruce-lee-age-18.jpg" alt="ip man and Bruce Lee (age 18)" class="img-fluid">
+				<figcaption>Yip man and Bruce Lee (age 18)</figcaption>
+			</div>
+		</div>
+		<div class="row py-4">
+			<div class="col-md-4 text-center">
+				<img src="./img/image-gallery/wise-words-from-ip-man.jpg" alt="wise words from ip man" class="img-fluid">
+				<figcaption>Wise words from Yip Man</figcaption>
+			</div>
+			<div class="col-md-4 text-center">
+				<img src="./img/image-gallery/ip-man-sparring-with-bruce-lee.jpg" alt="ip man sparring with bruce lee" class="img-fluid">
+				<figcaption>Yip man sparring with Bruce Lee</figcaption>
+			</div>
+			<div class="col-md-4 text-center">
+				<img src="./img/image-gallery/ip-man-portrait.jpg" alt="ip man portrait" class="img-fluid">
+				<figcaption>Portrait of Yip Man</figcaption>
+			</div>
+		</div>
+	</div>
+
+	<!-- Introductory Section - Ip Man in Media -->
+	<div class="container-fluid py-5 mt-3" id="background-ip-man-in-media-container">
 		<div class="container text-center">
-			<h5 class="h4 text-center">Yip Man in Media...</h5>
+			<h5 class="h4 text-center pb-3">Yip Man in Media...</h5>
+			<!-- Introduction paragraph to Yip Man in Media (Movies and Books) -->
 			<p>Recently, Yip Man has been featured in various movies, TV shows, literature
 				and music. The world has begun, and will continue to, celebrate his accomplishment
 				throughout his life. 
 			</p>
 		</div>
-
-		<div class="container" id="movies-section">
-			<h6>In Movies...</h6>
-			<div id="master-movie-container" class="row"></div>
-		</div>
-		<div class="container my-5" id="books-container">
-			<h6 class="py-2">In Books...</h6>
-			<div id="master-books-container"></div>
-		</div>
 	</div>
+
+	<div class="container-fluid p-4" id="ip-man-in-media">
+		<!-- These "In Movies..." and "In Books..." are empty because
+		their content is generated dynamically by the JavaScript below -->
+			<div class="container" id="movies-section">
+				<h5 class="py-2 text-center">In Movies...</h5>
+				<div id="master-movie-container" class="row"></div>
+			</div>
+			<div class="container my-5" id="books-container">
+				<h5 class="py-2 text-center">In Books...</h5>
+				<div id="master-books-container"></div>
+			</div>
+		</div>
+
     <script>
       function handleResponse(response) {
       for (var i = 0; i < response.items.length; i++) {
-				var item = response.items[i];
-				console.log(item.volumeInfo)
-				// in production code, item.text should have the HTML entities escaped.
-				const bookContainer = document.createElement('div');
-				bookContainer.classList.add('col-lg-3');
-				bookContainer.classList.add('col-md-4');
-				bookContainer.classList.add('col-sm-6');
-				bookContainer.classList.add('text-center');
-				bookContainer.classList.add('p-5');
-				bookContainer.classList.add('book');
-				document.getElementById("master-books-container").classList.add('row');
-				// document.getElementById("master-books-container").classList.add('mt-5');
-				document.getElementById("master-books-container").appendChild(bookContainer);
+			var item = response.items[i];
+			const bookContainer = document.createElement('div');
+			// Bootstrap styling through classes
+			bookContainer.classList.add('col-lg-3');
+			bookContainer.classList.add('col-md-4');
+			bookContainer.classList.add('col-sm-6');
+			bookContainer.classList.add('text-center');
+			bookContainer.classList.add('p-5');
+			bookContainer.classList.add('book');
+			document.getElementById("master-books-container").classList.add('row');
+			document.getElementById("master-books-container").appendChild(bookContainer);
 
-
-				// Image
-				const coverImage = document.createElement('img');
-				coverImage.classList.add('book-image');
-				document.getElementsByClassName('book')[i].appendChild(coverImage);
-				document.getElementsByClassName("book-image")[i].src = item.volumeInfo.imageLinks.thumbnail;
-				document.getElementsByClassName("book-image")[i].alt = "picture of book cover";
-				
-				// Title Paragraph Section
-				const titleParagraph = document.createElement('p');
-				titleParagraph.classList.add('book-title');
-				document.getElementsByClassName('book')[i].appendChild(titleParagraph);
-				document.getElementsByClassName("book-title")[i].innerHTML = item.volumeInfo.title;
-				
-				// Subtitle Paragraph Section
-				const subtitleParagraph = document.createElement('p');
-				subtitleParagraph.classList.add('book-subtitle');
-				document.getElementsByClassName('book')[i].appendChild(subtitleParagraph);
-				if (item.volumeInfo.subtitle != undefined) {
-					document.getElementsByClassName("book-subtitle")[i].innerHTML = item.volumeInfo.subtitle;
-				}
+			// Image  -- Book Cover
+			const coverImage = document.createElement('img');
+			coverImage.classList.add('book-image');
+			document.getElementsByClassName('book')[i].appendChild(coverImage);
+			document.getElementsByClassName("book-image")[i].src = item.volumeInfo.imageLinks.thumbnail;
+			document.getElementsByClassName("book-image")[i].alt = "picture of book cover";
 			
-				// Authors
-				const authorParagraph = document.createElement('p');
-				authorParagraph.classList.add('book-author');
-				document.getElementsByClassName('book')[i].appendChild(authorParagraph);
-				document.getElementsByClassName("book-author")[i].innerHTML = item.volumeInfo.authors[i];
-
-				// description
-				const descriptionParagraph = document.createElement('p');
-				descriptionParagraph.classList.add('book-description');
-				document.getElementsByClassName('book')[i].appendChild(descriptionParagraph);
-				document.getElementsByClassName("book-author")[i].innerHTML = item.volumeInfo.description;
-
-				// publishedDate
-				const publishedDateParagraph = document.createElement('p');
-				publishedDateParagraph.classList.add('book-publishedDate');
-				document.getElementsByClassName('book')[i].appendChild(publishedDateParagraph);
-				document.getElementsByClassName("book-author")[i].innerHTML = 'Published: ' + item.volumeInfo.publishedDate;
-
-				// pageCount
-				const pageCountParagraph = document.createElement('p');
-				pageCountParagraph.classList.add('book-pageCount');
-				document.getElementsByClassName('book')[i].appendChild(pageCountParagraph);
-				document.getElementsByClassName("book-pageCount")[i].innerHTML = 'Page Count: ' + item.volumeInfo.pageCount;
-				
-				// infoLink
-				const infoLinkParagraph = document.createElement('a');
-				infoLinkParagraph.classList.add('book-infoLink');
-				document.getElementsByClassName('book')[i].appendChild(infoLinkParagraph);
-				document.getElementsByClassName("book-infoLink")[i].classList.add('btn');
-				document.getElementsByClassName("book-infoLink")[i].classList.add('btn-outline-primary');
-				document.getElementsByClassName("book-infoLink")[i].href = item.volumeInfo.infoLink;
-				document.getElementsByClassName("book-infoLink")[i].target = "_blank";
-				document.getElementsByClassName("book-infoLink")[i].innerHTML = 'Read More';
-				
-				
-				
-
+			// Title Paragraph Section -- Title of the Book
+			const titleParagraph = document.createElement('p');
+			titleParagraph.classList.add('book-title');
+			document.getElementsByClassName('book')[i].appendChild(titleParagraph);
+			document.getElementsByClassName("book-title")[i].innerHTML = item.volumeInfo.title;
+			
+			// Subtitle Paragraph Section -- Subtitle of the Book
+			const subtitleParagraph = document.createElement('p');
+			subtitleParagraph.classList.add('book-subtitle');
+			document.getElementsByClassName('book')[i].appendChild(subtitleParagraph);
+			if (item.volumeInfo.subtitle != undefined) {
+				document.getElementsByClassName("book-subtitle")[i].innerHTML = item.volumeInfo.subtitle;
 			}
+		
+			// Authors -- The Author(s) of each book
+			const authorParagraph = document.createElement('p');
+			authorParagraph.classList.add('book-author');
+			document.getElementsByClassName('book')[i].appendChild(authorParagraph);
+			document.getElementsByClassName("book-author")[i].innerHTML = item.volumeInfo.authors[i];
+
+			// description -- A short description of each book
+			const descriptionParagraph = document.createElement('p');
+			descriptionParagraph.classList.add('book-description');
+			document.getElementsByClassName('book')[i].appendChild(descriptionParagraph);
+			document.getElementsByClassName("book-author")[i].innerHTML = item.volumeInfo.description;
+
+			// publishedDate -- The Date the book was published
+			const publishedDateParagraph = document.createElement('p');
+			publishedDateParagraph.classList.add('book-publishedDate');
+			document.getElementsByClassName('book')[i].appendChild(publishedDateParagraph);
+			document.getElementsByClassName("book-author")[i].innerHTML = 'Published: ' + item.volumeInfo.publishedDate;
+
+			// pageCount -- How long the book is.
+			const pageCountParagraph = document.createElement('p');
+			pageCountParagraph.classList.add('book-pageCount');
+			document.getElementsByClassName('book')[i].appendChild(pageCountParagraph);
+			document.getElementsByClassName("book-pageCount")[i].innerHTML = 'Page Count: ' + item.volumeInfo.pageCount;
+			
+			// infoLink -- Links that lead to more information about each book
+			const infoLinkParagraph = document.createElement('a');
+			infoLinkParagraph.classList.add('book-infoLink');
+			document.getElementsByClassName('book')[i].appendChild(infoLinkParagraph);
+			document.getElementsByClassName("book-infoLink")[i].classList.add('btn');
+			document.getElementsByClassName("book-infoLink")[i].classList.add('btn-outline-primary');
+			document.getElementsByClassName("book-infoLink")[i].href = item.volumeInfo.infoLink;
+			document.getElementsByClassName("book-infoLink")[i].target = "_blank";
+			document.getElementsByClassName("book-infoLink")[i].innerHTML = 'Read More';
+		}
     }
-    </script>
-    <script src="https://www.googleapis.com/books/v1/volumes?q=ip+man&callback=handleResponse"></script>
-	<!-- jQuery first, then Popper.js, then Bootstrap JS, Bootstap dependencies -->
+	</script>
+	<!-- This script tag refers to the Google Books API -->
+	<script src="https://www.googleapis.com/books/v1/volumes?q=ip+man&callback=handleResponse"></script>
+	
+	<!-- Bootstrap Dependency Setup -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -1,4 +1,4 @@
-let prevScrollpos = window.pageYOffset;
+// This function transitions the navbar from black to yellow after scrolling
 window.onscroll = () => {
   let currentScrollPos = window.pageYOffset;
    if (currentScrollPos < $(window).height()) {
@@ -11,12 +11,31 @@ window.onscroll = () => {
 	   document.getElementById("navbar").classList.remove('navbar-dark');
 	   document.getElementById("navbar").classList.add('navbar-light');
    }
-  	prevScrollpos = currentScrollPos;
 }
 
+// This generic function is a remove() helper function to use on DOM items
+Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+}
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i >= 0; i--) {
+        if(this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+}
+
+// When on mobile, remove the video background and replace it with an image instead
+if (window.innerWidth < 1200) {
+	document.getElementById("video-background").remove();
+	document.getElementById("video-overlay").remove();
+}
+
+// Using the fetch API, retrieve movies IP MAN was in. API: OMDB.
 fetch("http://www.omdbapi.com/?s=ip+man&plot=full&apikey=thewdb").then((response) => {	
 	return response.json();
 }).then(({ Search }=movies) => {
+	// Destructuring of the Search object
 	return Search;
 }).then((movies) => {
 	const moviesArray = movies.forEach((movie, i) => {
@@ -52,4 +71,5 @@ fetch("http://www.omdbapi.com/?s=ip+man&plot=full&apikey=thewdb").then((response
 	})
 });
 
-// Title, Year, Poster
+
+

@@ -1,6 +1,9 @@
+/* Root holds my CSS variables */
 :root {
 	--video-background-overlay-opacity: 0.2;
 }
+
+/* General setup for the look and feel of the website, font changes mostly */
 body {
 	overflow-y: scroll;
     scrollbar-width: none; /* Firefox */
@@ -11,12 +14,17 @@ body {
 }
 
 
-
-body::-webkit-scrollbar { /* WebKit */
+/* Removes the scrollbar when scrolling */
+body::-webkit-scrollbar {
     width: 0;
     height: 0;
 }
+/* Generally adjusts the fonts of each header */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold !important;
+}
 
+/* Make the video background feel screen and be in the background, behind overlayed text */
 #video-background {
 	position: absolute;
   	z-index: -1;
@@ -24,12 +32,12 @@ body::-webkit-scrollbar { /* WebKit */
   	min-height:100%;
 }
 
-
 #video-background-container {
 	z-index: 1;
 	position: relative;
 }
 
+/* Styling of the text overlaying the video background */
 .jumbotron-fluid .container {
 	z-index: 2;
 	height: 100vmin;
@@ -37,40 +45,50 @@ body::-webkit-scrollbar { /* WebKit */
 	color: white !important;
 }
 
+/* Adjusts the image size of the Yip Man Logo overlaying the video background */
 .jumbotron-fluid .container img {
 	width: 120px;
 }
 
+/* Fixes the navbar to the top, and changes the height & width & color of the navbar */
 .jumbotron-fluid nav {
 	position: fixed;
 	width: 100%;
-	height: 6.2em;
-	color: black !important
+	height: 5em;
+	color: black !important;
 }
 
+/* Resizes Yip Man logo in navbar */
+.navbar-brand img {
+	height: 70px;
+	padding-top: 0.15em;
+	padding-bottom: 0.15em;
+}
+
+/* Readjusts sizing of the Yip Man photo labeled, "Yip man as a Young Adult" */
 #yip-man-headshot {
 	padding-left: 12em;
 	padding-right: 12em;
 }
 
-.side-dragons {
-	width: 200px;
+/* Green background behind the Yip Man in media container */
+#background-ip-man-in-media-container {
+	background: rgb(96, 235, 89);
 }
 
-#ip-man-in-media {
-	background: rgb(255, 192, 100);
+/* Adjusts font size of "More about him..." header */
+#more-about-him h4 {
+	font-size: 2em;
 }
 
 #books-container {
-	background: rgb(255, 222, 100);
 	line-height: 1.5;
 }
 
+/* Red Border between each book div */
 .book {
 	border: 1px red solid;
 }
-
-
 
 .book-title {
 	font-style: italic;
@@ -79,24 +97,19 @@ body::-webkit-scrollbar { /* WebKit */
 h6 {
 	font-size: 1.5em;
 }
-/* #master-movie-container {
-	background: rgb(98, 162, 224);
-} */
 
+/* The makes the movie zoom in on hover */
 .movie-container:hover {
 	transition: 0.5s ease-in;
 	transform: scale(1.1);
-
 }
 
-
+/* Purple Background behind the "Some more about him" container */
 #more-about-him {
 	background: rgb(123, 108, 228);
 }
-h1, h2, h3, h4, h5, h6 {
-	font-weight: bold !important;
-}
 
+/* The class added when scrolling past the video background, it shrinks the navbar */
 .shrink {
 	transition-delay: 1s;
 	background: rgb(255,255,153) !important;
@@ -104,4 +117,40 @@ h1, h2, h3, h4, h5, h6 {
 	height: 3em !important;
 	transition: height 1s;
 }
+
+/* Adjusts sizing of the wah shun image */
+#wah-shun-headshot {
+	min-height: 300px;
+}
+
+/* Blue Background behind "Yip Man's career" container */
+#background-career-container {
+	background: rgb(98, 137, 220);
+}
+/* Font size adjustments */
+#as-a-kid-container h5 {
+	font-size: 1.8em;
+}
+#books-container h5 {
+	font-size: 1.1em;
+}
+#movies-section h5 {
+	font-size: 1.2em;
+}
+
+/* This image is by default not visible */
+.img-on-mobile {
+	display: none;
+}
+
+@media (max-width: 1200px) { 
+	/* On smaller devices, the image is viewable */
+	 .img-on-mobile {
+		display: block;
+	 }
+	 /* Fixes the navbar to the top again on smaller devices after removing the video background */
+	 .jumbotron-fluid nav {
+		position: fixed;
+	 }
+ }
 
